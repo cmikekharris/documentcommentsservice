@@ -1,0 +1,17 @@
+name: documentcommentsservice
+recipe: lamp
+config:
+  php: '8.3'
+  webroot: public
+  database: mysql:8.0
+  xdebug: true
+tooling:
+  phpcs:
+    service: appserver
+    cmd: /app/vendor/bin/phpcs
+  phpstan:
+    service: appserver
+    cmd: /app/vendor/bin/phpstan
+  phpcbf:
+    service: appserver
+    cmd: /app/vendor/bin/phpcbf
